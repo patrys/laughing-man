@@ -45,6 +45,9 @@ class FaceFinder(object):
             img_in.save(out_path, 'JPEG')
 
 if __name__ == "__main__":
+    if len(sys.argv) < 3:
+        print 'Syntax: %s <in_file.jpg> <out_file.jpg>' % sys.argv[0]
+        exit(1)
     ff = FaceFinder()
     ff.process(sys.argv[1], sys.argv[2])
 
